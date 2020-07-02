@@ -2,7 +2,7 @@ def moove(action, positionY, positionX):
     if action == "z":
         positionY = positionY - 1
     elif action == "q":
-        positionX += positionX - 1
+        positionX = positionX - 1
     elif action == "s":
         positionY = positionY + 1
     elif action == "d":
@@ -26,7 +26,7 @@ def checkMoove(action, positionY, positionX):
     if action == "z":
         positionY = positionY - 1
     elif action == "q":
-        positionX += positionX - 1
+        positionX = positionX - 1
     elif action == "s":
         positionY = positionY + 1
     elif action == "d":

@@ -2,21 +2,23 @@
 from pynput import keyboard
 import printMap as pMap
 import moove as moove
+import win as win
+import variables
 import os
 clear = lambda: os.system('cls')
 
 
 def press(action):
-    global positionX
-    global positionY
     if action == "z" or action == "q" or action == "s" or action == "d":
-        if moove.checkMoove(action, positionY, positionX):
-            mouvement = moove.moove(action, positionY, positionX)
-            positionY = mouvement[0]
-            positionX = mouvement[1]
+        if moove.checkMoove(action, variables.positionY, variables.positionX):
+            mouvement = moove.moove(action, variables.positionY, variables.positionX)
+            variables.positionY = mouvement[0]
+            variables.positionX = mouvement[1]
             clear()
-            pMap.printLab(positionY, positionX)
-            print(f"Y {positionY}, X {positionX}")
+            pMap.printTitre()
+            pMap.printLab(variables.positionY, variables.positionX)
+            if variables.positionY == 0 and variables.positionX == 24:
+                win.win()
         else:
             print("Vous ne pouvez pas traverser les murs")
     else:
@@ -29,11 +31,15 @@ def on_press(key):
         print("ZQSD uniquement merci")
 
 
+def Main():
+    clear()
+    pMap.printTitre()
+    pMap.printLab(variables.positionY, variables.positionX)
 
-positionY = 1
-positionX = 1
-pMap.printLab(positionY, positionX)
-statutParti = "ok"
+if __name__ == "__main__":
+    Main()
+
+
 with keyboard.Listener(
         on_press=on_press) as listener:
     listener.join()
