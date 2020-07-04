@@ -30,7 +30,17 @@ def on_press(key):
     try:
         press(key.char)
     except AttributeError:
-        print("ZQSD uniquement merci")
+        if key == key.up:
+            press("z")
+        elif key == key.down:
+            press("s")
+        elif key == key.left:
+            press("q")
+        elif key == key.right:
+            press("d")
+        else:
+            print("ZQSD uniquement merci")
+        
 
 
 def Main():
