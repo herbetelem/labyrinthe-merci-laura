@@ -1,11 +1,15 @@
 
 import variables
 
+#fonction pour print la map
 def printLab(y, x, lab, avatar):
+    #compteur 1 represente l'axe Y en cours d'impression
     compteur1 = 0
     print()
     for index in lab:
+        #compteur 2 represente l'axe X en cours d'impression
         compteur2 = 0
+        #ligne correspond a la ligne en cours d'impression
         ligne = ""
         while compteur2 < len(lab[0]):
             if compteur1 == y and compteur2 == x:
@@ -24,6 +28,7 @@ def printTitre():
     print("||__||||__||||_______||||__||||__||||__||||__||||__||||__||||__||||__||||__||||__||")
     print("|/__\||/__\||/_______\||/__\||/__\||/__\||/__\||/__\||/__\||/__\||/__\||/__\||/__\|")
 
+# fonction rng pour choisir la map
 def randomMap(choiceMap):
     if choiceMap == 1:
         variables.lab = variables.lab1
