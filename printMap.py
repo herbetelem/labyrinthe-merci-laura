@@ -33,13 +33,9 @@ def randomMap(choiceMap):
     if choiceMap == 1:
         variables.lab = variables.lab1
         variables.checkLab = variables.checkLab1
-        variables.winY = 0
-        variables.winX = 24
     else:
         variables.lab = variables.lab2
         variables.checkLab = variables.checkLab2
-        variables.winY = 13
-        variables.winX = 129
 
 
 

@@ -26,7 +26,7 @@ def press(action):
             pMap.printTitre()
             pMap.printLab(variables.positionY, variables.positionX, variables.lab, variables.avatar)
             #check si win
-            if variables.positionY == variables.winY and variables.positionX == variables.winX:
+            if variables.positionY == 0 or variables.positionX == 0 or variables.positionY == (len(variables.lab) - 1) or variables.positionX == (len(variables.lab[0]) - 1):
                 win.win()
         else:
             print("Vous ne pouvez pas traverser les murs")
